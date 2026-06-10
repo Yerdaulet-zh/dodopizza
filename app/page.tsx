@@ -1,11 +1,14 @@
 import { Button } from "@/shared/components/ui/button";
 import Image from "next/image";
+import { Categories, Container, Title } from "@/shared/components/shared";
 
 export default function Home() {
   return (
-    <div>
-      Home
-      <Button variant={"outline"}>Click</Button>
-    </div>
+    <>
+      <Container className="mt-10">
+        <Title text="Все пиццы" size="lg" className="font-extrabold"/>
+        <Categories />
+      </Container>
+    </>
   );
 }
