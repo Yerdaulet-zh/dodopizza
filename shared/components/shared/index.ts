@@ -1,2 +1,4 @@
-import { Header } from '@/shared/components/shared/header';
-import { Container } from './container';
+export { Header } from '@/shared/components/shared/header';
+export { Container } from './container';
+export { Title } from './title';
+
