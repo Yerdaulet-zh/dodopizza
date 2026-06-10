@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
+import { Header } from "@/shared/components/shared/header";
 import "./globals.css";
 
 const nunito = Nunito({
@@ -25,6 +26,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <main className="min-h-screen">
+          <Header />
           {children}
         </main>
       </body>
