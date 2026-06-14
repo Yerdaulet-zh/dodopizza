@@ -1,0 +1,14 @@
+import { Node } from './../node_modules/effect/dist/dts/internal/redBlackTree/node.d';
+import { PrismaClient } from "@prisma/client/extension";
+
+const PrismaClientSingleton = () => {
+    return new PrismaClient();
+};
+
+declare global {
+    var prismaGlobal: undefined | ReturnType<typeof PrismaClientSingleton>;
+}
+
+export const prisma = globalThis.prismaGlobal ?? PrismaClientSingleton();
+
+if (process.env.NODE_ENV != "production") globalThis.prismaGlobal = prisma;
