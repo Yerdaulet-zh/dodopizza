@@ -1,14 +1,19 @@
-import { Node } from './../node_modules/effect/dist/dts/internal/redBlackTree/node.d';
-import { PrismaClient } from "@prisma/client/extension";
+import { PrismaClient } from "@prisma/client";
+import { PrismaPg } from "@prisma/adapter-pg";
+import { Pool } from "pg";
 
 const PrismaClientSingleton = () => {
-    return new PrismaClient();
+  const pool = new Pool({ connectionString: process.env.POSTGRES_URL });
+
+  const adapter = new PrismaPg(pool);
+
+  return new PrismaClient({ adapter });
 };
 
 declare global {
-    var prismaGlobal: undefined | ReturnType<typeof PrismaClientSingleton>;
+  var prismaGlobal: undefined | ReturnType<typeof PrismaClientSingleton>;
 }
 
 export const prisma = globalThis.prismaGlobal ?? PrismaClientSingleton();
 
-if (process.env.NODE_ENV != "production") globalThis.prismaGlobal = prisma;
+if (process.env.NODE_ENV !== "production") globalThis.prismaGlobal = prisma;
