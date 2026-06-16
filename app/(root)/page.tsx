@@ -1,5 +1,3 @@
-import { Button } from "@/shared/components/ui/button";
-import Image from "next/image";
 import { Filters, Container, Title, TopBar, ProductsGroupList } from "@/shared/components/shared";
 import { prisma } from "@/prisma/client";
 
