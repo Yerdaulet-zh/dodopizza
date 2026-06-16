@@ -16,3 +16,4 @@ export { GroupVariants } from './group-variants';
 export { ChooseProductModal } from './modals/choose-product-modal';
 export { ChooseProductForm } from './modals/choose-product-form';
 export { ChoosePizzaForm } from './modals/choose-pizza-form';
+export { IngredientItem } from './ingredient-item';
