@@ -2,9 +2,7 @@
 
 import React from "react";
 import { Dialog, DialogContent } from "../../ui/dialog";
-import { Product } from "@prisma/client";
 import { cn } from "@/shared/lib/utils";
-import { Title } from "../title";
 import { useRouter } from "next/navigation";
 import { ChooseProductForm } from "./choose-product-form";
 import { ProductWithRelations } from "@/@types/prisma.product";

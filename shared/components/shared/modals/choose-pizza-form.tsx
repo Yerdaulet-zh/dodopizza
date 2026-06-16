@@ -1,18 +1,14 @@
 'use client';
 
-import React, { useState } from 'react';
 import { cn } from '@/shared/lib/utils';
 import { PizzaImage } from '../pizza-image';
 import { Title } from '../title';
 import { Button } from '../../ui';
 import { GroupVariants } from '../group-variants';
-import { mapPizzaType, PizzaSize, pizzaSizes, PizzaType, pizzaTypes } from '@/shared/constants/pizza';
+import { PizzaSize, PizzaType, pizzaTypes } from '@/shared/constants/pizza';
 import { Ingredient, ProductItem } from '@prisma/client';
 import { IngredientItem } from '../ingredient-item';
-import { useSet } from 'react-use';
-import { ProductWithRelations } from '@/@types/prisma.product';
-import { calcTotalPizzaPrice } from '../../../lib/calc-total-pizza-price';
-import { getAvailablePizzaSizes, getPizzaDetails } from '@/shared/lib';
+import { getPizzaDetails } from '@/shared/lib';
 import { usePizzaOptions } from '@/shared/hooks';
 
 interface Props {
